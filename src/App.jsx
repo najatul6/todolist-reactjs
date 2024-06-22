@@ -1,3 +1,4 @@
+import brandLogo from "../src/assets/light_logo.png"
 import { useEffect, useState } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
@@ -49,7 +50,7 @@ function App() {
   return (
     <>
     <div className="logoContainer">
-      <img src="../src/assets/light_logo.png" alt="brnd logo" />
+      <img src={brandLogo} alt="brnd logo" />
     </div>
       <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodo={handleAddTodos} />
       <TodoList handleDeleteTodo={handleDeleteTodo} handleUpdateTodo={handleEditTodo} todos={todos} />
