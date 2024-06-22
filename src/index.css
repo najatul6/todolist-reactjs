@@ -19,7 +19,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: url('../src/assets/cool-background.png');
+  background: url("../src/assets/cool-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   gap: 14px;
@@ -28,6 +28,16 @@ button {
 header {
   display: flex;
   align-items: stretch;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer img {
+  width: 50px;
 }
 
 header,
@@ -104,10 +114,7 @@ p {
   opacity: 0.7;
 }
 
-
-
 @media (min-width: 640px) {
-
   header button,
   header input {
     font-size: 1.2em;

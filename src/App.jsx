@@ -48,6 +48,9 @@ function App() {
 
   return (
     <>
+    <div className="logoContainer">
+      <img src="../src/assets/light_logo.png" alt="brnd logo" />
+    </div>
       <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodo={handleAddTodos} />
       <TodoList handleDeleteTodo={handleDeleteTodo} handleUpdateTodo={handleEditTodo} todos={todos} />
     </>
