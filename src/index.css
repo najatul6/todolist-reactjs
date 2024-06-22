@@ -1,68 +1,117 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  color: #202124;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+h1,
+h2,
+h3,
+input,
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: 'Press Start 2P', system-ui;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #eff6ff;
+  gap: 14px;
+}
+
+header {
+  display: flex;
+  align-items: stretch;
+}
+
+header,
+.main {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 14px;
+}
+
+header input {
+  flex: 1;
+  border-radius: 14px;
+  outline: none;
+  width: 100%;
+}
+
+header button {
+  border-radius: 14px;
+  background: transparent;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+header button:hover {
+  opacity: 0.7;
+}
+
+header button,
+header input {
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+}
+
+.todoItem p {
+  flex: 1;
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.actionsContainer button {
+  transition-duration: 200ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.actionsContainer button:hover {
+  opacity: 0.7;
+}
+
+
+
+@media (min-width: 640px) {
+
+  header button,
+  header input {
+    font-size: 1.2em;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  p {
+    font-size: 1em;
   }
 }
