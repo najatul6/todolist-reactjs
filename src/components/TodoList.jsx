@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import TodoCard from "./TodoCard";
 
 export default function TodoList(props) {
@@ -15,4 +16,8 @@ export default function TodoList(props) {
             })}
         </ul>
     )
+}
+
+TodoList.propTypes={
+    todos: PropTypes.array,
 }

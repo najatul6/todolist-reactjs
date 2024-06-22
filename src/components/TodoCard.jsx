@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function TodoCard(props) {
   const { children, handleDeleteTodo, handleUpdateTodo,index } = props;
   return (
@@ -13,4 +15,11 @@ export default function TodoCard(props) {
       </div>
     </li>
   );
+}
+
+TodoCard.propTypes={
+  children:PropTypes.string.isRequired,
+  handleDeleteTodo:PropTypes.func.isRequired,
+  handleUpdateTodo:PropTypes.func.isRequired,
+  index:PropTypes.number.isRequired,
 }
