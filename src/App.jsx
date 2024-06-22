@@ -4,22 +4,25 @@ import TodoList from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [todoValue, setTodoValue] = useState('');
 
   const handleAddTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
   };
 
   const handleDeleteTodo = (index) => {
+   
     setTodos(todos.filter((todo,todoIndex) => todoIndex!== index));
   };
 
   const handleUpdateTodo = (index) => {
-    setTodos(todos.filter((todo,todoIndex) => todoIndex!== index));
+    setTodoValue(todos[index])
+    handleDeleteTodo(index);
   }
 
   return (
     <>
-      <TodoInput handleAddTodo={handleAddTodo} />
+      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodo={handleAddTodo} />
       <TodoList handleDeleteTodo={handleDeleteTodo} handleUpdateTodo={handleUpdateTodo} todos={todos} />
     </>
   );
