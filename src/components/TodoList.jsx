@@ -1,7 +1,16 @@
-export default function TodoList(){
-    return(
-        <div>
-            <h1>Todo List</h1>
-        </div>
-    )
+import TodoCard from "./TodoCard";
+
+export default function TodoList({todos}) {
+ 
+  return (
+    <ul className="main">
+      {todos?.map((todo, todoIndex) => {
+        return (
+          <TodoCard key={todoIndex}>
+            <p>{todo}</p>
+          </TodoCard>
+        );
+      })}
+    </ul>
+  );
 }

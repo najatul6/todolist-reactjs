@@ -1,7 +1,9 @@
-import React from 'react'
 
 export default function TodoInput() {
   return (
-    <div>TodoInput</div>
-  )
+    <header>
+      <input type="text" placeholder="Enter todo...." />
+      <button>Add</button>
+    </header>
+  );
 }
