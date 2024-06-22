@@ -19,7 +19,9 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: #eff6ff;
+  background: url('../src/assets/cool-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   gap: 14px;
 }
 
