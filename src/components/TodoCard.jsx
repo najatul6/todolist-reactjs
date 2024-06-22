@@ -1,10 +1,15 @@
-export default function TodoCard({children}) {
+export default function TodoCard(props) {
+  const { children, handleDeleteTodo, handleUpdateTodo,index } = props;
   return (
     <li className="todoItem">
       {children}
       <div className="actionsContainer">
-        <i className="fa-solid fa-pen-to-square"></i>
-        <i className="fa-solid fa-trash-can"></i>
+        <button onClick={()=>{handleUpdateTodo(index)}}>
+          <i className="fa-solid fa-pen-to-square"></i>
+        </button>
+        <button onClick={()=>{handleDeleteTodo(index)}}>
+          <i className="fa-solid fa-trash-can"></i>
+        </button>
       </div>
     </li>
   );

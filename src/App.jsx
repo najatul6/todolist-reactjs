@@ -1,34 +1,28 @@
 import { useState } from "react";
-import TodoInput from "./components/TodoInput"
-import TodoList from "./components/TodoList"
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const [todos, setTodos] = useState([]);
 
+  const handleAddTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
+  };
 
-  const [todos,setTodos]=useState([
-    "Go to the gym",
-    "Go to the park",
-    "Go to the beach",
-    "Go to the mall",
-    "Go to the cinema",
-    "Go to the restaurant",
-    "Go to the library",
-    "Go to the shop",
-    "Go to the supermarket",
-    "Go to the bank",
-    "Go to the post office",
-  ])
+  const handleDeleteTodo = (index) => {
+    setTodos(todos.filter((todo,todoIndex) => todoIndex!== index));
+  };
 
-  const handleAddTodo=(newTodo)=>{
-    setTodos([...todos,newTodo])
+  const handleUpdateTodo = (index) => {
+    setTodos(todos.filter((todo,todoIndex) => todoIndex!== index));
   }
 
   return (
     <>
-     <TodoInput handleAddTodo={handleAddTodo}/>
-     <TodoList todos={todos}/>
+      <TodoInput handleAddTodo={handleAddTodo} />
+      <TodoList handleDeleteTodo={handleDeleteTodo} handleUpdateTodo={handleUpdateTodo} todos={todos} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
